@@ -1,7 +1,20 @@
+# %% Packages
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
+# %% Functions
 def plot_phase(ax):
+    """
+    Plotting the phase diagram of the MJO on the given axes.
+    
+    Parameters:
+    -----------
+        ax: matplotlib.axes.Axes
+    
+    Returns:
+    --------
+        None
+    """
     x = [-4, 4]; y1 = [-4, 4]; y2 = [4, -4]
     ax.plot(x, y1, color = "grey", linewidth = 1, alpha =  0.5); ax.plot(x, y2, color = "grey", linewidth = 1, alpha = 0.5)
     ax.axhline(0, color = "grey", linewidth = 1, alpha = 0.5); ax.axvline(0, color = "grey", linewidth = 1, alpha = 0.5)
