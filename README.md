@@ -7,9 +7,9 @@ This repository briefly demonstrate the framework of MJO probabilistic forecast 
 Liouville's theorem states that a distribution function is constant while moving along any trajectories in phase space.
 
 Liouville equation is given by
-$$
-\frac{d \rho}{dt} = \frac{\partial \rho}{\partial t} + \vec{v} \cdot \nabla \rho = -\rho \nabla \cdot \vec{v}
-$$
+
+$$\frac{d \rho}{dt} = \frac{\partial \rho}{\partial t} + \vec{v} \cdot \nabla \rho = -\rho \nabla \cdot \vec{v}$$
+
 where $\rho$ is ensemble density, $\vec{v}$ is the information flow in the phase space. Liouville equation can be used to describe the evolution of a probability density function (PDF) in a phase space. It is worthnoting that Liouville equation is mathematically identical to the continuity equation in fluid dynamics. Both of them have similar physical insights, the continuity equation infers the conservation of mass, and Liouville equation infers the conservation of information.
 
 We apply Liouville equation on probabilistic forecast of MJO. The concept can be briefly introduced by the following schematic:
