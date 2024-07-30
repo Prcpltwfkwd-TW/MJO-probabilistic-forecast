@@ -42,7 +42,7 @@ cov0   = [[0.05, 0], [0, 0.05]] # covariance matrix of the initial condition
 rho_init  = generate_init_condition([x0, y0], cov0, M)[:-t_forecast]
 rho_init  = smooth_process(rho_init, M[0, :-t_forecast], M[1, :-t_forecast], X_grid, Y_grid)
 rho_init /= np.nansum(rho_init)
-dict_95_init = find_coverage_position(rho_init, 0.95)
+dict_95_init = find_coverage_position(rho_init, 0.95) # find the value of the 95 percentile, and the area within the 95% confidence interval
 particles_init = np.random.choice(dict_95_init["positions"], n_ens, replace = False) # particles used to resolve the PDF
 
 particles_forecast[:, :, 0] = M[:, particles_init].T
@@ -52,7 +52,7 @@ rho_forecast[:, 0]         /= np.nansum(rho_forecast[:, 0])
 # Forecast
 for t in range(1, t_forecast):
     
-    # predict the particles
+    # predict the particles (linear inverse modeling)
     for ens in range(n_ens):
         xposition = np.argmin(np.abs(x_det - particles_forecast[ens, 0, t-1])); yposition = np.argmin(np.abs(y_det - particles_forecast[ens, 1, t-1]))
         epsilon   = np.random.multivariate_normal([0, 0], cov[yposition, xposition], 1)
