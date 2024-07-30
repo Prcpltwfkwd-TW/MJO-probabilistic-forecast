@@ -22,7 +22,11 @@ The framework of MJO probablistic forecast can be summarized as follows:
 1. Predicting the movement of particles using a linear inverse model (LIM), details are provided in [calc_noise.ipynb](calc_noise.ipynb).
 2. Calculating the Lagragian change of ensemble density using Liouville equation, details are provided in [calc_determinant.ipynb](calc_determinant.ipynb).
 
-The complete code of forecast is in [forecast.py](forecast.py). This python file outputs the [movement of particles](particles_forecast.npy) and the [evolution of ensemble density](rho_forecast.npy).
+The complete code of forecast is in [forecast.py](forecast.py). This python file outputs the [movement of particles](particles_forecast.npy) and the [evolution of ensemble density](rho_forecast.npy). The result of forecast is shown in following figure:
+
+![result](images/forecast.png)
+
+where the predicted PDF is shaded, the red contour is the 95% confidence interval, the gold points are the particles used to resolve the PDF.
 
 ## References
 Joseph Liouville. Note sur la théorie de la variation des constantes arbitraires. Journal de mathématiques pures et appliquées, 3:342–349, 1838.
