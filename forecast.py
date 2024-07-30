@@ -55,7 +55,6 @@ for t in range(1, t_forecast):
     # predict the particles
     for ens in range(n_ens):
         xposition = np.argmin(np.abs(x_det - particles_forecast[ens, 0, t-1])); yposition = np.argmin(np.abs(y_det - particles_forecast[ens, 1, t-1]))
-        # epsilon   = noise_at_each_timestep(cov[yposition, xposition])
         epsilon   = np.random.multivariate_normal([0, 0], cov[yposition, xposition], 1)
         particles_forecast[ens, :, t] = np.dot(G, particles_forecast[ens, :, t-1]) + epsilon
     
@@ -99,4 +98,4 @@ cbox = fig.add_axes([gs[3, 3].get_position(fig).x1 + 0.02, gs[3, 3].get_position
 cbar = plt.colorbar(axrho, cax = cbox, orientation = "vertical")
 
 plt.suptitle("LIM-based Liouville Equation Model", fontsize = 20, y = 0.9)
-plt.savefig("forecast.png", dpi = 300)
+plt.savefig("images/forecast.png", dpi = 300)
