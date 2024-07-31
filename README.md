@@ -29,7 +29,7 @@ The complete code of forecast is in [forecast.py](forecast.py). This python file
 where the predicted PDF is shaded, the red contour is the 95% confidence interval, the gold points are the particles used to resolve the PDF.
 
 ## Acknowledgement
-Thanks to my advisor, also the original algorithm developer, Dr. Kai-Chi Tseng: https://github.com/kuiper2000
+Thanks to my advisor, also the original algorithm developer, Dr. Kai-Chi Tseng: https://github.com/kuiper2000.
 
 ## References
 Joseph Liouville. Note sur la théorie de la variation des constantes arbitraires. Journal de mathématiques pures et appliquées, 3:342–349, 1838.
